@@ -29,7 +29,7 @@ Inside utils.java there are 2 ways or function to solve the problem:
 
 Method
 ======
-The important KNN algorithm is used to solve the problem. Moreover, so as to create a fully scalable program, 3 values are ajustable. These values are:
+The novel KNN algorithm is used to solve the problem. Moreover, so as to create a fully scalable program, 3 values are ajustable. These values are:
 
 	X	Percent of the dataset destined to training. Default in 0.7 (70%).
 	Y	Number of the column corresponding to the class (5,see next section for a full explanation of the dataset)
