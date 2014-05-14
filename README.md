@@ -31,11 +31,9 @@ Method
 ======
 The important KNN algorithm is used to solve the problem. Moreover, so as to create a fully scalable program, 3 values are ajustable. These values are:
 
-	x
-		Percent of the dataset destined to training. Default in 0.7 (70%).
-	Y
-		Number of the column corresponding to the class (5,see next section for a full explanation of the dataset) 	Z	
-		Number of neighbours considered. By default: 3.
+	X	Percent of the dataset destined to training. Default in 0.7 (70%).
+	Y	Number of the column corresponding to the class (5,see next section for a full explanation of the dataset)
+	Z	Number of neighbours considered. By default: 3.
 		
 DataSet 
 ======= 
