@@ -19,10 +19,14 @@ public class RTask {
             RConnection c = null;
             //Creating the object Util
             Utils util = new Utils();
+            //
+            Double x = 0.7;
+            int y = 5;
+            int z = 3;
             //Open the conection
             c = util.openCon(c);
             //Calling the function
-            util.path1(c);
+            util.path1(c,x,y,z);
             //Closing the conection
             util.closeCon(c);
         } catch (RserveException | REXPMismatchException | IOException ex) {

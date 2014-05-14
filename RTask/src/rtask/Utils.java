@@ -59,10 +59,10 @@ public class Utils {
     }
 
     //Exp: It is described in readme.md on GitHub 
-    //IN-Param: The connection object
+    //IN-Param: The connection object and X,Y,Z (readme.md for descriptions)
     //Out-Param: No
-    public void path1(RConnection c) throws IOException, RserveException, REXPMismatchException {
-        REXP x = new REXP();
+    public void path1(RConnection c,double x,int y,int z) throws IOException, RserveException, REXPMismatchException {
+        REXP re = new REXP();
 
         c.eval("#function 1 - it is used to load a sample training data\n"
                 + "fun1<-function(x){\n"
@@ -85,32 +85,32 @@ public class Utils {
                 + "return (preds)\n"
                 + "}");
 
-        evaluation(x, c);
+        evaluation(re, c,x,y,z);
 
     }
     
     //Exp: It is described in readme.md on GitHub 
-    //IN-Param: The connection object
+    //IN-Param: The connection object and X,Y,Z (readme.md for descriptions)
     //Out-Param: No
-    public void path2(RConnection c) throws IOException, RserveException, REXPMismatchException {
-        REXP x = new REXP();
+    public void path2(RConnection c,double x,int y,int z) throws IOException, RserveException, REXPMismatchException {
+        REXP re = new REXP();
         String root = System.getProperty("user.dir") + System.getProperty("file.separator");
 
         c.eval("source(" + root + "exe.R)");
         System.out.println("Reading script");
 
-        evaluation(x, c);
+        evaluation(re, c,x,y,z);
     }
 
     //Exp: Private function to present the results
     //IN-Param: The connection and EXP objects
     //Out-Param: No
-    private void evaluation(REXP x, RConnection c) throws RserveException, REXPMismatchException {
-        c.eval("ejecution<-fun2(0.7,5,3)");
-        x = c.eval("table(ejecution)");
+    private void evaluation(REXP re, RConnection c,double x,int y,int z) throws RserveException, REXPMismatchException {
+        c.eval("ejecution<-fun2("+x+","+y+","+z+")");
+        re = c.eval("table(ejecution)");
 
-        System.out.println("Class 1:" + x.asIntegers()[0]);
-        System.out.println("Class 2:" + x.asIntegers()[1]);
-        System.out.println("Class 3:" + x.asIntegers()[2]);
+        System.out.println("Class 1:" + re.asIntegers()[0]);
+        System.out.println("Class 2:" + re.asIntegers()[1]);
+        System.out.println("Class 3:" + re.asIntegers()[2]);
     }
 }
