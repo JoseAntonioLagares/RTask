@@ -20,11 +20,11 @@ Inside the source code you might see 2 class:
 	Utils.java
 		Contains useful methods inorder to resolve the task.
 		
-Inside utils.java there are 2 ways or function to solve the problem:
+Inside utils.java there are 2 ways or functions to solve the problem:
 
-	path1
+	"path1"
 		A complete way to solve the problem using function "eval" and the text of exe.R script. By default, this option is selected.
-	path2
+	"path2"
 		A different operation is done in this method. The method tries to load the full exe.R script. This method return an exception when the script is loading. Nevertheless, this method is included in order to clarify and show the proficiency in R challenges.
 
 Method
